@@ -1,1 +1,52 @@
- 
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Setup Solana
+    init: |
+      curl -sSfL https://release.solana.com/v1.16.15/install | sh
+      echo 'export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"' >> ~/.bashrc
+      source ~/.bashrc
+      solana --version
+      solana-keygen new --no-bip39-passphrase -o ~/.config/solana/id.json
+      solana config set --url devnet
+
+  - name: Setup Anchor
+    init: |
+      cargo install --git https://github.com/coral-xyz/anchor avm --locked
+      avm install 0.28.0
+      avm use 0.28.0
+      anchor --version
+
+  - name: Setup Node.js
+    init: |
+      npm install -g pnpm
+      pnpm install
+
+ports:
+  - port: 8899
+    onOpen: ignore
+    visibility: public
+  - port: 8900
+    onOpen: ignore
+    visibility: public
+  - port: 3000
+    onOpen: open-browser
+    visibility: public
+
+vscode:
+  extensions:
+    - rust-lang.rust-analyzer
+    - serayuzgur.crates
+    - tamasfe.even-better-toml
+    - bradlc.vscode-tailwindcss
+    - dbaeumer.vscode-eslint
+    - esbenp.prettier-vscode
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    addCheck: true
+    addComment: true 
