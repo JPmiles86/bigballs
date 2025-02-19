@@ -1,0 +1,40 @@
+{
+  "project": {
+    "name": "bigballs",
+    "version": "0.1.2",
+    "description": "Interactive 3D visualization of $BIGBALLS token holders"
+  },
+  "development": {
+    "framework": "next",
+    "packageManager": "pnpm",
+    "nodeVersion": ">=18.0.0",
+    "typescript": true,
+    "prettier": true,
+    "eslint": true
+  },
+  "visualization": {
+    "engine": "three.js",
+    "fallback": "2d-canvas",
+    "maxBalls": 10000,
+    "targetFPS": 60
+  },
+  "blockchain": {
+    "network": "solana",
+    "cluster": "devnet",
+    "compiler": "anchor"
+  },
+  "deployment": {
+    "frontend": "vercel",
+    "region": "all",
+    "analytics": true
+  },
+  "formatting": {
+    "indentSize": 2,
+    "maxLineLength": 100,
+    "quoteStyle": "single"
+  },
+  "testing": {
+    "framework": "jest",
+    "coverage": 80
+  }
+} 
