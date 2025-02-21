@@ -1,0 +1,4 @@
+mkdir -p app/src/{components,hooks,services,types,utils}
+cd app
+pnpm create next-app . --typescript --tailwind --eslint 
+pnpm add three @react-three/fiber @react-three/drei @solana/web3.js @solana/wallet-adapter-react @project-serum/anchor 

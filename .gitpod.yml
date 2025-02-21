@@ -23,16 +23,25 @@ tasks:
       npm install -g pnpm
       pnpm install
 
+  - name: Install and Start Next.js
+    init: |
+      cd app
+      pnpm install
+    command: |
+      cd app
+      pnpm dev
+
 ports:
-  - port: 8899
-    onOpen: ignore
-    visibility: public
-  - port: 8900
-    onOpen: ignore
-    visibility: public
   - port: 3000
     onOpen: open-browser
     visibility: public
+    name: Next.js App
+  - port: 4000
+    visibility: public
+    name: BigBalls API
+  - port: 8899
+    visibility: public
+    name: Solana Local Node
 
 vscode:
   extensions:

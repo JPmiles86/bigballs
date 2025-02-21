@@ -1,7 +1,7 @@
 # Development Checkpoints and Review Process
-Version: 0.1.2
-Last Updated: Feb 17, 2025 10:24 AM
-Created By: ARCH-2
+Version: 0.1.5
+Last Updated: Feb 21, 2025 10:00 AM
+Created By: ARCH-3
 
 ## Overview
 This document outlines the specific checkpoints where development must pause for architectural review. Each checkpoint requires ARCH-2's approval before proceeding to the next phase.
@@ -84,6 +84,43 @@ This document outlines the specific checkpoints where development must pause for
 - Automatic burn triggers
 - Supply tracking
 - Burn event tests
+
+### 2.6 Visualization System
+**Review Required:** YES
+**Status:** IN PROGRESS
+**Last Update:** Feb 21, 2025
+
+### Updated Requirements
+1. **2D Interface**
+   - [x] Black background
+   - [ ] Yellow border container
+   - [ ] DVD-style ball bouncing
+   - [ ] Static 2D view (no 3D camera)
+
+2. **Ball System**
+   - [ ] Initial supply ball (1B tokens)
+   - [ ] Dev wallet ball (5% allocation)
+   - [ ] Connected wallet ball
+   - [ ] Other holder balls
+   - [ ] DVD-style movement
+
+3. **UI Updates**
+   - [ ] Token information display
+   - [ ] "Who's got the biggest balls?" branding
+   - [ ] $BIGBALLS ticker display
+   - [ ] Market metrics panel
+
+### Technical Debt
+1. Fix hydration mismatch in WalletButton
+2. Simplify physics to 2D
+3. Remove 3D camera controls
+4. Update color scheme to black/yellow
+
+### Review Notes
+- Switching from 3D to 2D visualization
+- Implementing DVD-style bouncing
+- Focusing on meme coin branding
+- Need to add token information display
 
 ## Checkpoint 3: Test Suite Completion
 **Review Required:** YES
